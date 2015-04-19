@@ -346,7 +346,8 @@ if(searchTags){
   tag = tag.split('-');
 
   document.querySelector('.search-tags-name').textContent = "'" + tag.join(' ') + "'";
-  searchTags.innerHTML = lookup(tag[0]);
+  var results = lookup(tag[0]);
+  searchTags.innerHTML = results || 'No matching stories';
 }
 
 // VOTE MECHANISM
