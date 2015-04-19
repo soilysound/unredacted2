@@ -230,14 +230,6 @@ document.querySelectorAll('.rankings__row').forEach(function(row){
 
     var index = parseInt(this.getAttribute('data-index'), 10);
 
-    if(index === 0){
-      index = 1;
-    }
-
-    if(index === 1){
-    	index = 2
-    } 
-
     ths.forEach(function(th){
       th.classList.remove('is-sorted');
     });
@@ -281,7 +273,6 @@ document.querySelectorAll('.rankings__row').forEach(function(row){
   }
 
   ths.forEach(function(th, index){
-    th.setAttribute('data-index', index);
     th.onclick = sortRows;
   });
 
@@ -348,13 +339,14 @@ autocomplete.onkeyup = function(){
 
 // MATCH TAGS
 // ================
-if(location.pathname.match(/^\/tags|404/)){
+var searchTags = document.querySelector('.search-tags-content');
+if(searchTags){
   var path = location.pathname.replace(/\/$/, '');
   var tag = path.split('/').pop();
   tag = tag.split('-');
 
   document.querySelector('.search-tags-name').textContent = "'" + tag.join(' ') + "'";
-  document.querySelector('.search-tags-content').innerHTML = lookup(tag[0]);
+  searchTags.innerHTML = lookup(tag[0]);
 }
 
 // VOTE MECHANISM
