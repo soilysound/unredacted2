@@ -44,13 +44,64 @@
   <meta name="msapplication-wide310x150logo" content="/img/widetile.png" />
   <meta name="msapplication-square310x310logo" content="/img/largetile.png" />
 
-  <link rel="stylesheet" href="/site.css" inline>
+  <link rel="stylesheet" href="/site.css">
+
+  <style data-webfont-src="/fonts/aleo-regular-webfont.css"></style>
+  <style data-webfont-src="/fonts/headline.css"></style>
+
   <script>
 		
+    // ADD TOUCH CLASSES TOUCH
 		var hasTouch = !!("ontouchstart" in window ||"DocumentTouch" in window && document instanceof window.DocumentTouch);
 		document.documentElement.className += (hasTouch ? '' : 'no-') + 'touch';
+
+    // FOR EACH SHIM
+    // ================
+    NodeList.prototype.forEach = Array.prototype.forEach;
+
+    (function(){
+
+      function getFont(styleNode, src){
+
+        var url = src;
+        var name = src.split('/').pop();
+
+        var storedFont = window.localStorage.getItem(name);
+
+        if(storedFont){
+          styleNode.textContent = storedFont;
+        }
+
+        else {
+          
+          var req = new XMLHttpRequest();
+
+          req.onreadystatechange = function(){
+
+            if(this.readyState === 4 && this.status === 200){
+
+              // get css string
+              styleNode.textContent = this.responseText;
+
+              // set into localstorage with the decacheValue appended on the end
+              window.localStorage.setItem(name, this.responseText);
+            }
+          };
+
+          req.open("GET", src, true);
+          req.send();
+        }
+      }
+
+      document.querySelectorAll('style[data-webfont-src]').forEach(function(style){
+        getFont(style, style.getAttribute('data-webfont-src'))
+      });
+
+
+    })()
 			
   </script>
+    
 
 </head>
 <body>
@@ -205,6 +256,6 @@
 var searchLookUp = [{"tags":["JFK","Kennedy","assassination","Zapruder","Lee Harvey Oswald","John F Kennedy","CIA","Ruby","FBI","Hoover","1963"],"url":"assassination-of-jfk-conspiracy-in-dallas","title":"Assassination of JFK","sub-title":"Conspiracy in Dallas","image":"https://d262ilb51hltx0.cloudfront.net/max/600/1*nBpwXxhWBncPbiJ57BO7MQ.jpeg"},{"tags":["Octopus","Danny Casolaro","Casolro","suicide","promis","banking","BCCI","Riconosciuto","conspiracy","murder","arms","global","CIA"],"url":"danny-casolaro-hunting-the-octopus","title":"Danny Casolaro","sub-title":"Hunting the Octopus","image":"https://d262ilb51hltx0.cloudfront.net/max/600/1*Qk5FYcJOh99PtY5RHfHLzw.jpeg"},{"tags":["Jack the Ripper","ripper","Whitechapel","Royal","murder","serial killer","Victorian","Sir William Gull","Prince Albert"],"url":"jack-the-ripper-the-royal-conspiracy","title":"Jack the Ripper","sub-title":"The Royal Conspiracy","image":"https://d262ilb51hltx0.cloudfront.net/max/600/1*Iy6w1M64mFSDuK4aCqjW2Q.jpeg"},{"tags":["moon","Apollo","landing","hoax","NASA","conspiracy","Neil Armstrong","Buzz Aldrin","space","Van Allen","Nixon","lunar","Kubrick","1969"],"url":"moon-landings-the-great-apollo-hoax","title":"Moon Landings","sub-title":"The Great Apollo Hoax","image":"https://d262ilb51hltx0.cloudfront.net/max/600/1*hQ-eKx2SsYxv2xttAOyoMg.jpeg"},{"tags":["Nazi","ODESSA","WW2","Hitler","Fourth Reich","ratline","South America","Mengele","Brazil","Argentina","Bolivia","Chile","paperclip","CIA","Otto","Skorzeny","holocaust","Vatican"],"url":"odessa-the-nazi-ratline","title":"Odessa","sub-title":"The Nazi Ratline","image":"https://d262ilb51hltx0.cloudfront.net/max/600/1*dUx-0USWKqWbwd7Da2O51A.jpeg"}]
 	
 </script>
-<script src="/site.js" inline></script>
+<script src="/site.js"></script>
 </body>
 </html>
