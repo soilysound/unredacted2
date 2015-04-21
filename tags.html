@@ -105,7 +105,7 @@
 
 </head>
 <body>
-<div class="site-header margin">
+<div class="site-header margin" role="banner" itemscope itemtype="http://schema.org/WPHeader">
     <div class="wrap">
       <div class="site-search">
         <input class="site-search__input">
@@ -121,7 +121,7 @@
           
         </a>
          <div class="site-header__inner-cell site-header__inner-cell-logo">
-         <h1 class="site-logo #{is-index-class}"><a href="/" class="site-logo__link"><img src="/img/site-title-logo.png" alt="unredacted.com" class="site-logo__image"></a></h1>
+         <div class="site-logo #{is-index-class}"><a href="/" class="site-logo__link"><img src="/img/site-title-logo.png" alt="unredacted.com" class="site-logo__image" alt="theunredacted.com"></a></div>
         </div>
          <a href="/top100" class="site-header__inner-cell site-header__inner-cell-nav hover">
           <div class="nav-icon nav-icon--top100">
@@ -133,6 +133,7 @@
       </div>    
     </div>
   </div>
+
 
 <div class="wrap">
 <script type="html/template" content="row"><tr class="rankings__row" tabindex="0"><td><img class="rankings__img lazy-load" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" data-srcset="#{thumb}" src="#{thumb}" alt=""></td><td><a href="/#{url}" title="" class="rankings__link" tabindex="-1"><h2>#{sub-title}</h2><p>#{abstract}</p></a></td><td data-shim="#{score}"><span>#{score-adjusted}</span></td><td>#{views}</td><td>#{shares}</td></tr></script>
@@ -148,6 +149,7 @@
 
 </div>
 
+<!--googleoff: snippet-->
 <div class="social-overlay">
 	<div class="social-overlay__inner">
 	<h6 class="social-overlay__head">Share this:</h6>
@@ -199,6 +201,7 @@
 	<a href="#" title="" class="social-overlay__close">close</a>
 	</div>
 </div>
+<!--googleon: snippet-->
 <div class="site-footer">
   <div class="wrap">
   <ul class="social-overlay__items social-overlay__items--footer">
