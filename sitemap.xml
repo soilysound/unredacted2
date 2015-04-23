@@ -3,9 +3,13 @@
 
   <url>
 		<loc>http://theunredacted.com/</loc>
+		<changefreq>daily</changefreq>
+    <priority>1</priority>
 	</url>
 	<url>
 		<loc>http://theunredacted.com/top100/</loc>
+		<changefreq>daily</changefreq>
+    <priority>0.8</priority>
 	</url>
-  <url><loc>http://theunredacted.com/assassination-of-jfk-conspiracy-in-dallas</loc></url><url><loc>http://theunredacted.com/assassination-of-rfk-the-second-gunman</loc></url><url><loc>http://theunredacted.com/bigfoot-the-legend-of-sasquatch</loc></url><url><loc>http://theunredacted.com/danny-casolaro-hunting-the-octopus</loc></url><url><loc>http://theunredacted.com/dyatlov-pass-incident-mountain-of-the-dead</loc></url><url><loc>http://theunredacted.com/jack-the-ripper-the-royal-conspiracy</loc></url><url><loc>http://theunredacted.com/moon-landings-the-great-apollo-hoax</loc></url><url><loc>http://theunredacted.com/odessa-the-nazi-ratline</loc></url>
+  <url><loc>http://theunredacted.com/assassination-of-jfk-conspiracy-in-dallas/</loc><changefreq>daily</changefreq></url><url><loc>http://theunredacted.com/assassination-of-rfk-the-second-gunman/</loc><changefreq>daily</changefreq></url><url><loc>http://theunredacted.com/bigfoot-the-legend-of-sasquatch/</loc><changefreq>daily</changefreq></url><url><loc>http://theunredacted.com/danny-casolaro-hunting-the-octopus/</loc><changefreq>daily</changefreq></url><url><loc>http://theunredacted.com/dyatlov-pass-incident-mountain-of-the-dead/</loc><changefreq>daily</changefreq></url><url><loc>http://theunredacted.com/jack-the-ripper-the-royal-conspiracy/</loc><changefreq>daily</changefreq></url><url><loc>http://theunredacted.com/moon-landings-the-great-apollo-hoax/</loc><changefreq>daily</changefreq></url><url><loc>http://theunredacted.com/odessa-the-nazi-ratline/</loc><changefreq>daily</changefreq></url>
 </urlset>
