@@ -52,7 +52,7 @@
   <script>
 		
     // ADD TOUCH CLASSES TOUCH
-		var hasTouch = !!("ontouchstart" in window ||"DocumentTouch" in window && document instanceof window.DocumentTouch);
+		window.hasTouch = !!("ontouchstart" in window ||"DocumentTouch" in window && document instanceof window.DocumentTouch);
 		document.documentElement.className += (hasTouch ? '' : 'no-') + 'touch';
 
     // FOR EACH SHIM
