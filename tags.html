@@ -51,9 +51,11 @@
 
   <script>
 		
-    // ADD TOUCH CLASSES TOUCH
+    // ADD TOUCH AND OLD IE CLASSES TOUCH
 		window.hasTouch = !!("ontouchstart" in window ||"DocumentTouch" in window && document instanceof window.DocumentTouch);
-		document.documentElement.className += (hasTouch ? '' : 'no-') + 'touch';
+    window.oldIE = document.all && !window.atob;
+
+		document.documentElement.className += (hasTouch ? '' : 'no-') + 'touch ' + (oldIE ? 'old-ie' : '');
 
     // FOR EACH SHIM
     // ================
@@ -124,7 +126,9 @@
     <div class="wrap">
       <div class="site-search">
         <input class="site-search__input">
-        <div class="site-search__results"></div>
+        <div class="site-search__results"><div class="site-search__results-scroll">
+          
+        </div></div>
       </div>
       <div class="site-header__inner">
         <a href="#" class="site-header__inner-cell site-header__inner-cell-nav search-nav hover">
