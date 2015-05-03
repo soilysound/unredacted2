@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>The Unredacted - Conspircies, mysteries and the weird</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800' rel='stylesheet' type='text/css'>
+
+	<style>
+		
+
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		html {
+			font-family: 'Open Sans', sans-serif;
+			font-size: 20px;
+			line-height: 1;
+			font-weight: 400;
+			background: url(/img/bg-site.png) #F0F0EA;
+			color: #222;
+			-webkit-text-size-adjust: none;
+		}
+
+		img {
+			max-width: 100%
+		}
+
+		.wrap {
+			max-width: 1154px;
+			border-width: 20px;
+			border-width: 5vw;
+			border-color: rgba(0,0,0,0);
+			border-style: solid;
+			border-top-style: hidden;
+			border-bottom-style: hidden;
+			background-clip: content-box;
+			width: 100%;
+			margin: auto;
+			text-align: center;
+			position: relative;
+		}
+
+		.wrap-inner {
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		.site-header {
+			background: url(/img/bg-header.png) #222;
+		}
+
+		.site-header__inner {
+			display: table;
+			width: 100%;
+			height: 80px;
+			height: 20vw;
+			min-height: 70px;
+			max-height: 100px;
+		}
+
+		.site-header__cell {
+			display: table-cell;
+			vertical-align: middle;
+			line-height: 1;
+			color: #eee;
+		}
+
+		.site-header__cell-logo {
+			width: 100%;
+		}
+
+		.site-header__logo {
+			width: 100%;
+			max-width: 288px;
+		}
+
+		.nav-button {
+			height: 30px;
+			width: 30px;
+			height: 10vw;
+			width: 10vw;
+			display: block;
+			max-height: 75px;
+			max-width: 75px;
+			min-height: 55px;
+			min-width: 55px;
+			font-size: 12px;
+			font-weight: 600;
+			text-transform: uppercase;
+			-webkit-transform: translateX(15%);
+			transform: translateX(15%);
+			padding-top: 10%;
+			color: #eee;
+			text-decoration: none;
+			opacity: 0.68;
+		}
+
+		.site-header__cell:first-of-type > .nav-button {
+			-webkit-transform: translateX(-15%);
+			transform: translateX(-15%); 
+		}
+
+		.nav-button__icon {
+			width: 66%;
+			height: 66%;
+			margin: 0 auto;
+			position: relative;
+		}
+
+		.nav-button > em {
+			font-style: normal;
+			padding-top: 0.4em;
+			display: inline-block;
+		}
+
+		.nav-button__icon > svg {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			fill: white;
+			left: 0;
+		}
+
+		.article-header {
+			background: url(/img/bg-article-header.png) #C7C8BD;
+		}
+
+		.article-header__masthead {
+			font-size: 3rem;
+			font-size: 8.5vw;
+			padding: 0.74em 0.2em 1em 0;
+		}
+		
+		.article-header__masthead > h1 {
+			font-size: 0.9rem;
+			padding-bottom: 1.5em;
+			text-transform: uppercase;
+			font-weight: 600;
+			color: #555;
+			position: relative;
+			top: -0.1em;
+		}
+
+		.article-header__masthead > h1 > em {
+			content: attr(data-rank);
+			font-weight: 400;
+			font-style: normal;
+			font-size: 0.94em;
+		}
+
+		.article-header__masthead > h2 {
+			font-size: 1em;
+			font-weight: 800;
+			text-transform: uppercase;
+			max-width: 60vw;
+			display: inline-block;
+			line-height: 0.9;
+			letter-spacing: -0.05em;
+			word-spacing: 3px;
+			-webkit-transform: scaleY(1.2);
+			opacity: 0.94;
+
+		}
+
+		.article-header__nav {
+			position: absolute;
+			top: 0;
+			right: 1px;
+			padding-top: 0;
+			top: 50%;
+			-webkit-transform: translateY(-48%);
+			transform: translateY(-48%);
+		}
+
+		.nav-button--article {
+			color: #222;
+			margin-bottom: 1.6em;
+		}
+
+		.nav-button--article > .nav-button__icon {
+			border-radius: 50%;
+			background: rgba(255,255,255,0.7);
+			font-weight: 200;
+			font-size: 2em;
+			line-height: 1.96;
+			width: 2.5rem;
+			height: 2.5rem;
+			max-width: 2.5rem;
+			max-height: 2.5rem;
+		}
+
+		.nav-button--article > em {
+			font-style: italic;
+			margin-bottom: 0.5em;
+		}
+
+		.article {
+			padding-top: 1rem;
+		}
+
+		.article > .wrap { 
+			background-color: white;
+		}
+
+		.article > .wrap > .wrap-inner {
+			min-height: 100vh;
+			padding-bottom: 2rem
+		}
+	
+		.article__head {
+			font-size: 1.8rem;
+			padding: 1.2em 0;
+			line-height: 1.25;
+		}
+
+		.article__head > h3 {
+			font-weight: 200;
+			font-size: 1em;
+			padding: 0 0.8em;
+		}
+
+		.article__body {
+			text-align: left;
+			line-height: 1.4;
+			font-size: 1rem;
+		}
+
+		.article__body p {
+			margin-bottom: 1.5em;
+		}
+
+		.article__body h3 {
+			font-weight: 400;
+			font-size: 1.5em;
+			margin: 2em 0 0.8em;
+			text-align: center
+		}
+
+		.article__body h3 + h4 {
+			margin-top: -0.5em;
+		}
+
+		.article__body h4 {
+			font-weight: 200;
+			color: #666;
+			font-size: 1.2em;
+			margin: 2em 0 0.9em;
+			text-align: center
+		}
+
+		figure {
+			margin: 0 -12.5% 7.5%;
+			position: relative;
+			text-align: center
+		}
+
+		figure > div {
+			padding-bottom: 56.25%;
+			position: relative;
+		}
+
+		figure > div > img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+		}
+
+		figcaption {
+			font-size: 0.8em;
+			padding-top: 1em;
+			color: #666;
+		}
+
+		figure:first-of-type > figcaption {
+			display: none
+		}
+
+		@media all and (min-width){
+			.article-header__masthead > h2 {
+				font-size: 100px;
+			}
+		}
+		@media all and (max-width: 1024px){
+
+			.article-header__masthead {
+				padding: 1em 0 1.25em;
+			}
+
+			.article-header__masthead > h2 {
+				font-size: 1.2em;
+				max-width: 65vw;
+			}
+		}
+
+		@media all and (max-width: 800px){
+
+			.article-header__nav {
+				position: static;
+				text-align: center;
+			}
+
+			.nav-button--article {
+				display: inline-block;
+				padding-top: 0;
+				-webkit-transform: none;
+				transform: none;
+			}
+
+			.nav-button--article > .nav-button__icon {
+				line-height: 2.1;
+			}
+		}
+
+		@media all and (max-width: 768px) and (orientation:portrait){
+			
+			.wrap-inner {
+				width: 84%;
+			}
+
+			.article-header__masthead {
+				padding: 1.3em 0 1.8em;
+			}
+
+			.article-header__masthead > h2 {
+				font-size: 1.4em;
+				padding: 0;
+				max-width: 80vw;
+			}
+
+			.article-header__nav {
+				-webkit-transform: translateY(-70%);
+				transform: translateY(-70%);
+			}
+
+			.nav-button--article {
+				margin-bottom: 0;
+			}
+
+			figure {
+				margin: 0 -9.5% 8%;
+			}
+		}
+
+		@media all and (max-width: 600px){
+
+			.nav-button {
+				font-size: 10px;
+			}
+
+			.article-header__masthead {
+				padding: 1.3em 0 2.3em;
+			}
+
+			.article-header__masthead > h1 {
+				font-size: 0.85rem;
+				padding-bottom: 1em;
+			}
+
+			.article-header__masthead > h2 {
+				font-size: 1.56em;
+				max-width: 90vw;
+			}
+
+			.article-header__nav {
+				-webkit-transform: translateY(-76%);
+				transform: translateY(-76%);
+			}
+
+			.article > .wrap {
+				border-color: white;
+			}
+
+			.article__head {
+				font-size: 1.35rem;
+			}
+
+			.wrap-inner {
+				width: 100%;
+			}
+
+			.nav-button--article > .nav-button__icon {
+				/*line-height: 1.9;*/
+			}
+
+			html {
+				font-size: 18px;
+			}
+
+
+			figure {
+				margin: 0 -5.5% 9%;
+			}
+
+		}
+		</style>
+</head>
+<body>
+
+<div class="site-header">
+	<div class="wrap">
+		<div class="site-header__inner">
+			<div class="site-header__cell site-header__cell-nav">
+				<a href="#" class="nav-button">
+					<div class="nav-button__icon"><svg xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink version=1.1 x=0px y=0px viewbox="0 0 410.587 410.588" style="enable-background:new 0 0 410.587 410.588;" xml:space=preserve><g><path d="M410.587 371.351l-50.044-50.044l-39.866-39.866c20.505-28.842 32.685-63.996 32.685-102.009 c0-97.424-79.263-176.687-176.684-176.687C79.251 2.7 0 82 0 179.432c0 97.4 79.3 176.7 176.7 176.7 c40.698 0 78.116-13.963 108.01-37.167l68.508 68.508c0.841 0.8 1.8 1.5 2.7 2.207l18.194 18.188L410.587 371.351z M176.689 314.548c-74.503-0.006-135.111-60.622-135.111-135.111c0-74.5 60.614-135.108 135.111-135.108 c74.498 0 135.1 60.6 135.1 135.108c0 30.998-10.59 59.507-28.218 82.333c-5.833 7.537-12.374 14.49-19.642 20.7 C240.374 302.4 209.9 314.5 176.7 314.548z"></path></g></svg></div>
+					<em>search</em>
+				</a>
+			</div>
+			<div class="site-header__cell site-header__cell-logo">
+				<img class="site-header__logo" src="http://theunredacted.com/img/site-title-logo.png" alt="theunredacted.com">
+			</div>
+			<div class="site-header__cell site-header__cell-nav">
+				<a href="#" class="nav-button">
+					<div class="nav-button__icon"><svg xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink version=1.1 x=0px y=0px width=31.843px height=31.842px viewbox="0 0 31.843 31.842" style="enable-background:new 0 0 31.843 31.842;" xml:space=preserve><g><path d="M31.843 7.546c0.006-0.389-0.146-0.764-0.418-1.042c-0.271-0.277-0.646-0.433-1.035-0.433h-6.396 c-0.181 0-0.344 0.109-0.413 0.276c-0.067 0.167-0.028 0.4 0.1 0.487l1.233 1.232c0.195 0.2 0.3 0.5 0.3 0.7 c0 0.274-0.108 0.538-0.305 0.732l-6.26 6.257c-0.536 0.537-1.405 0.537-1.939 0l-4.039-4.039c-0.239-0.239-0.562-0.373-0.9-0.373 s-0.662 0.134-0.901 0.373L0.372 22.245c-0.496 0.498-0.496 1.3 0 1.803L1.726 25.4c0.239 0.2 0.6 0.4 0.9 0.4 c0.338 0 0.661-0.133 0.9-0.37l7.277-7.276c0.536-0.535 1.405-0.535 1.9 0l3.968 3.969c0.258 0.3 0.6 0.4 1 0.4 s0.715-0.146 0.973-0.399l9.416-9.417c0.193-0.194 0.457-0.303 0.73-0.303c0.274 0 0.5 0.1 0.7 0.304l1.453 1.5 c0.127 0.1 0.3 0.2 0.5 0.099c0.166-0.067 0.273-0.228 0.279-0.407L31.843 7.546z"></path></g></svg></div>
+					<em>top 100</em>
+				</a>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="article-header">
+	<div class="wrap">
+		<div class="wrap-inner article-header__masthead">
+			<h1><em>#4</em> The Enfield Poltergeist</h1>
+			<h2>A haunting in Suburbia</h2>
+		</div>
+		<div class="article-header__nav">
+			
+			<div class="nav-button nav-button--article">
+				<em>rate</em>
+				<div class="nav-button__icon">7.8</div>
+			</div>
+
+			<div class="nav-button nav-button--article">
+				<em>share</em>
+				<div class="nav-button__icon">3</div>
+			</div>
+
+			<div class="nav-button nav-button--article">
+				<em>talk</em>
+				<div class="nav-button__icon">1</div>
+			</div>
+
+		</div>
+	
+	</div>
+</div>
+
+
+<div class="article">
+	<div class="wrap">
+		<div class="wrap-inner">
+			<div class="article__head">
+				<h3>Was a family in 1970's Britian tormented by a poltergeist?</h3>
+			</div>
+
+			<div class="article__body">
+				<figure>
+					<div><img src="https://d262ilb51hltx0.cloudfront.net/max/800/1*HRY7pQ5YvLsECEVoYKGmrA.jpeg" alt=""></div>
+					<figcaption>caption</figcaption>
+				</figure>
+
+				<h3>Summary</h3>
+				<p>Mark Cavendish retained his lead of the Tour of Turkey by winning for the second day in a row on stage two on Monday.
+
+<p>Cavendish (Etixx - Quick-Step) proved too fast for runner-up Sacha Modolo (Lampre-Merida) and third-placed Nicola Ruffoni (Bardiani-CSF) after the 182km stage from Alanya to Antalya finished in a sprint.
+<h4>Sub header here</h4>
+<p>It was his eighth win of the season and sixth at the Tour of Turkey in the last two years. Cavendish was wearing the leader's jersey after claiming victory on stage one on Sunday.
+
+	<figure>
+					<div><img src="http://e1.365dm.com/15/04/16-9/20/mark-cavendish-tour-of-turkey-sacha-modolo_3295904.jpg?20150427163449" alt=""></div>
+					<figcaption>caption</figcaption>
+				</figure>
+
+<p>There are no bonus seconds on offer at the race, meaning Cavendish remains on the same overall time as his closest rivals. Modolo is now second in the general classification, with Ruffoni third.
+
+<p>Cavendish (Etixx - Quick-Step) proved too fast for runner-up Sacha Modolo (Lampre-Merida) and third-placed Nicola Ruffoni (Bardiani-CSF) after the 182km stage from Alanya to Antalya finished in a sprint.
+<h3>Evidence for</h3>
+<h4>Number of witnesses</h4>
+<p>It was his eighth win of the season and sixth at the Tour of Turkey in the last two years. Cavendish was wearing the leader's jersey after claiming victory on stage one on Sunday.
+
+
+			</div>
+		</div>
+		
+	</div>
+
+</div>
+
+</body>
+</html>
