@@ -48,65 +48,7 @@
 
   <link rel="stylesheet" href="/site.css">
 
-  <style data-webfont-src="/fonts/opensans-800.css"></style>
-  <style data-webfont-src="/fonts/opensans-600.css"></style>
-  <style data-webfont-src="/fonts/opensans-400.css"></style>
-  <style data-webfont-src="/fonts/opensans-200.css"></style>
-
-  <script>
-		
-    // ADD TOUCH AND OLD IE CLASSES TOUCH
-		window.hasTouch = !!("ontouchstart" in window ||"DocumentTouch" in window && document instanceof window.DocumentTouch);
-    window.oldIE = document.all && !window.atob;
-
-		document.documentElement.className += (hasTouch ? '' : 'no-') + 'touch ' + (oldIE ? 'old-ie' : '');
-
-    // FOR EACH SHIM
-    // ================
-    NodeList.prototype.forEach = Array.prototype.forEach;
-
-    (function(){
-
-      function getFont(styleNode, src){
-
-        var url = src;
-        var name = src.split('/').pop();
-
-        var storedFont = window.localStorage.getItem(name);
-
-        if(storedFont){
-          styleNode.textContent = storedFont;
-        }
-
-        else {
-          
-          var req = new XMLHttpRequest();
-
-          req.onreadystatechange = function(){
-
-            if(this.readyState === 4 && this.status === 200){
-
-              // get css string
-              styleNode.textContent = this.responseText;
-
-              // set into localstorage with the decacheValue appended on the end
-              window.localStorage.setItem(name, this.responseText);
-            }
-          };
-
-          req.open("GET", src, true);
-          req.send();
-        }
-      }
-
-      document.querySelectorAll('style[data-webfont-src]').forEach(function(style){
-        getFont(style, style.getAttribute('data-webfont-src'))
-      });
-
-
-    })()
-			
-  </script>
+  <style data-webfont-src="/fonts/opensans.css"></style>
 
   <script data-schema="organization" type="application/ld+json">
   {"@context" : "http://schema.org",
