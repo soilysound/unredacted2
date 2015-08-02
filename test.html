@@ -4,15 +4,109 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
-	<link href='/fonts/opensans.css' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="">
 	<style>
-		body {
-			font-family: "Open Sans";
+		* {
+			margin: 0;
+			padding: 0;
+
 		}
+
+		html {
+			font-family: sans-serif;
+			font-size: 20px;
+		}
+
+		.site-width {
+			width: 100%;
+			width: 90vw;
+			max-width: 1366px;
+			margin: 0 auto;
+		}
+
+		.site-header {
+			width: 100%;
+			background: #222;
+		}
+
+		.site-header__body {
+			display: table;
+			height: 94px;
+			height: 13vw;
+			max-height: 94px;
+			min-height: 60px;
+		}
+
+		.site-header__col {
+			display: table-cell;
+			vertical-align: middle;
+			outline: 1px solid hotpink;
+			text-align: center;
+		}
+
+		.site-header__col2 {
+			width: 90%;
+		}
+
+		.site-header__nav {
+			background: orange;
+			height: 80%;
+			width: 10vw;
+			min-width: 42px;
+			max-width: 70px;
+			display: block;
+			position: relative;
+		}
+
+		.site-header__nav:after {
+			content: "";
+			display: block;
+			padding-bottom: 100%;
+		}
+
+		.site-header__nav-label {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			font-size: 12px;
+			font-weight: 400;
+		}
+
+		.site-logo {
+			display: block;
+			height: 60%;
+			max-width: 500px;
+			width: 95%;
+			margin: 0 auto;
+			position: relative;
+		}
+
+		.site-logo__img {
+			position: absolute;
+			height: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
 	</style>
 </head>
 <body>
-	
+	<div class="site-header">
+		<div class="site-header__body site-width">
+			<div class="site-header__col site-header__col1">
+				<a class="site-header__nav"><em class="site-header__nav-label">menu</em></a>
+			</div>
+			<div class="site-header__col site-header__col2">
+				<a class="site-logo">
+					<img src="img/site-logo2.png" alt="" class="site-logo__img">
+				</a>
+			</div>
+			<div class="site-header__col site-header__col3">
+				<a class="site-header__nav"><em class="site-header__nav-label">top 100</em></a>
+			</div>
+		</div>	
+	</div>
+
 </body>
 </html>
