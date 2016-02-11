@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		.items {
+			width: 30%;
+			height: 500px;
+			margin: 1%;
+			float: left;
+			background: hotpink;
+		}
+	</style>
+</head>
+<body>
+	<div class="items postpone-load" data-call="orange"></div>
+	<div class="items postpone-load"></div>
+	<div class="items postpone-load"></div>
+	<div class="items postpone-load"></div>
+	<div class="items postpone-load" data-call="orange"></div>
+	<div class="items postpone-load"></div>
+	<div class="items postpone-load"></div>
+	<div class="items postpone-load"></div>
+	<div class="items postpone-load" data-call="orange"></div>
+	<div class="items postpone-load"></div>
+	<div class="items postpone-load" data-call="orange"></div>
+	<div class="items postpone-load"></div>
+	<div class="items postpone-load"></div>
+	<div class="items postpone-load" data-call="orange"></div>
+	<div class="items postpone-load"></div>
+	<div class="items postpone-load" data-call="orange"></div>
+</body>
+
+<script>
+
+	HTMLCollection.prototype.forEach = Array.prototype.forEach;
+
+
+	function isInViewPort(element){
+
+    var rect = element.getBoundingClientRect();
+
+    // return true if the image is visible and in the viewport top and bottom
+    // otherwise return false
+
+    if(rect.width === 0){
+
+      // element is not visible
+      return false;
+    }
+
+    if(rect.bottom < 0){
+
+      // out of viewport top
+      return false;
+    }
+
+    // @note - use a fallback for window.innerHeight in IE8
+    if((window.innerHeight - rect.top) < 0){
+
+      // out of viewport bottom
+      return false;
+    }
+
+    // if it passes all that, its visible
+    return true;
+
+  }
+
+
+	var funcs = {
+		
+	}
+
+	function orange(){
+		this.style.background = "orange";
+		this.classList.remove('postpone-load');
+	}
+
+	funcs.orange = orange;
+
+	var items = document.getElementsByClassName('postpone-load');
+	items.forEach(function(item){
+		var call = item.getAttribute('data-call');
+		if(call && funcs[call]){
+			item.load = funcs[call];
+		}
+	})
+
+	function scan(){
+
+		for(var i = -1;++i<items.length;){
+			if(isInViewPort(items[i]) && items[i].load){
+				items[i].load();
+			}
+		}
+
+		setTimeout(function(){
+			requestAnimationFrame(scan);
+		}, 1000/6)
+	}
+
+	scan();
+
+
+</script>
+</html>
